@@ -5,26 +5,32 @@ class ClassComponent extends Component {
         super(props);
         this.state = {
             title: "Class Component",
-            user: ""
+            user: "",
+            count: 0
         };
     }
 
-
-    changeValue() {
-        this.setState({ title: "Class Component Modified" })
-    }
-
-    changeListerner(event) {
-        console.log("Input value changed")
-
-        this.setState({
-            title: this.state.title,
-            user: event.target.value,
-        }
-
+    increaseValue = () => {
+        this.setState(
+            {
+                count:this.state.count + 1
+            }
         )
     }
 
+    changeValue = () => {
+        this.setState({ title: "Class Component Modified" })
+    }
+
+    hoverListerner = () => {
+        console.log("Listerning hover ...")
+    }
+
+    changeListerner = (event) => {
+        this.setState({
+            user: event.target.value,
+        })
+    }
 
     render() {
         return (
@@ -32,16 +38,19 @@ class ClassComponent extends Component {
                 {/* <h1>{this.props.title}</h1>                 */}
                 <h1>{this.state.title}</h1>
                 <h2>Class Component Export</h2>
-                <h1>User = {this.state.user}</h1>
-                <button onClick={() => this.changeValue()}>click to modify</button>
+                <p>User = {this.state.user}</p>
+                <button onMouseOver={this.hoverListerner} onClick={this.changeValue}>click to modify</button>
                 <br></br>
                 <br></br>
-                <input onChange={(event) => this.changeListerner(event)}></input>
+                <input onChange={this.changeListerner}></input>
+                <br></br>
+                <br></br>
+                <h2>Count = {this.state.count}</h2>
+                <br></br>
+                <button onClick={this.increaseValue}>Add Count</button>
             </div>
         );
     }
 }
 
 export default ClassComponent;
-
-
