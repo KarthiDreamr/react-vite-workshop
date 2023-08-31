@@ -1,7 +1,8 @@
-function FunctionComponent(){
+function FunctionComponent(props){
     return(
         <div>
-            <h1>Function Component Export</h1>
+            <h1>{props.title}</h1>
+            <h2>Function Component Export</h2>
         </div>
     );
 }

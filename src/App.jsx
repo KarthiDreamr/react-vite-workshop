@@ -1,13 +1,13 @@
 import './App.css'
-import Home from './Components/FunctionComponent'
+import FunctionComponent from './Components/FunctionComponent'
 import ClassComponent from './Components/ClassComponent'
 
 function App() {
 
   return (
     <>
-      <Home />
-      <ClassComponent />
+      <FunctionComponent title="Function Component"/>
+      <ClassComponent title="Non-Class Component"/>
     </>
   )
 }

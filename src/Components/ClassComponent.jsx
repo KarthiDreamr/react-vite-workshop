@@ -2,9 +2,11 @@ import React,{Component} from "react";
 
 class ClassComponent extends Component{
     render(){
+        this.props={"title":"Class Component"}
         return(
             <div>
-                <h1>Class Component Export</h1>
+                <h1>{this.props.title}</h1>
+                <h2>Class Component Export</h2>
             </div>
         );
     }
