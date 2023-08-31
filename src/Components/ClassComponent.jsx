@@ -8,11 +8,19 @@ class ClassComponent extends Component {
         };
     }
 
+
+    changeValue(){
+        this.setState({title:"Class Component Modified"})
+    }
+        
+
     render() {
         return (
             <div>
                 <h1>{this.state.title}</h1>
                 <h2>Class Component Export</h2>
+                <button on onClick={()=>this.changeValue()}>click to modify</button>
+
             </div>
         );
     }
