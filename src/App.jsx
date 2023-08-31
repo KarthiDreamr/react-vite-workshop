@@ -13,7 +13,7 @@ function App() {
     <>
       <FunctionComponent title="Function Component"/>
       <ClassComponent title="Non-Class Component"/>
-      <button on onClick={buttonClick()}>click here</button>
+      <button on onClick={()=>buttonClick()}>click here</button>
     </>
   )
 }
